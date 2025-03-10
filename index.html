@@ -92,24 +92,24 @@
             <div class="recommendation" id="beachRecommendation">
                 <h3>Beach Destinations</h3>
                 <p>Relax on pristine shores with our top beach recommendations.</p>
-                <img src="https://images.unsplash.com/photo-1506748686217-0c6cc9e4bb72" alt="Sunny Beach" id="beachImage1">
-                <img src="https://images.unsplash.com/photo-1566111803-e5052c07e29b" alt="Tropical Beach" id="beachImage2">
+                <img src="https://beachatlas.s3.us-east-2.amazonaws.com/61ccd2da-e8f3-4511-9dba-bd9a7f30d2ff.webp" alt="Sunny Beach" id="beachImage1">
+                <img src="https://www.worldbeachguide.com/photos/large/lanikai-beach-hawaii.jpg" alt="Lanikai Beach, Hawaii" id="beachImage2">
                 <button onclick="changeBeachImages()">Change Beach Images</button>
             </div>
 
             <div class="recommendation" id="templeRecommendation">
                 <h3>Temple Visits</h3>
                 <p>Explore serene and historic temples that offer peace and cultural insights.</p>
-                <img src="https://images.unsplash.com/photo-1599397227460-2498d98cf297" alt="Ancient Temple" id="templeImage1">
-                <img src="https://images.unsplash.com/photo-1560971415-149f758ee75b" alt="Modern Temple" id="templeImage2">
+                <img src="https://www.worldhistory.org/uploads/images/3988.jpg" alt="Ancient Temple" id="templeImage1">
+                <img src="https://www.pilotguides.com/wp-content/uploads/2022/02/7912784624_3b95751bc8_c-799x445.jpg" alt="Modern Temple" id="templeImage2">
                 <button onclick="changeTempleImages()">Change Temple Images</button>
             </div>
 
             <div class="recommendation" id="countryRecommendation">
                 <h3>Destinations by Country</h3>
                 <p>Experience the unique charm of different countries.</p>
-                <img src="https://images.unsplash.com/photo-1472510493156-77d4b99cd6db" alt="Country Landscape" id="countryImage1">
-                <img src="https://images.unsplash.com/photo-1532586317-6db1da40dcb3" alt="City Skyline" id="countryImage2">
+                <img src="https://cdn.prod.website-files.com/63a02e61e7ffb565c30bcfc7/6597baeda6320c678311dd7f_country%20landscape%20design.webp" alt="Country Landscape" id="countryImage1">
+                <img src="https://img.andrewprokos.com/MANHATTAN-EMPIRE-STATE-VIEW-FROM-ROCKEFELLER-CENTER-AT-DUSK-5214-1000PX.jpg" alt="City Skyline" id="countryImage2">
                 <button onclick="changeCountryImages()">Change Country Images</button>
             </div>
         </div>
@@ -136,18 +136,18 @@
 
     <script>
         function changeBeachImages() {
-            document.getElementById("beachImage1").src = "https://images.unsplash.com/photo-1606121717984-8fd64b78583c";
-            document.getElementById("beachImage2").src = "https://images.unsplash.com/photo-1516972810927-9a9f08a5a314";
+            document.getElementById("beachImage1").src = "https://www.worldbeachguide.com/photos/large/lanikai-beach-hawaii.jpg";
+            document.getElementById("beachImage2").src = "https://beachatlas.s3.us-east-2.amazonaws.com/61ccd2da-e8f3-4511-9dba-bd9a7f30d2ff.webp";
         }
 
         function changeTempleImages() {
-            document.getElementById("templeImage1").src = "https://images.unsplash.com/photo-1574875694781-923c65873da6";
-            document.getElementById("templeImage2").src = "https://images.unsplash.com/photo-1583477222642-5cdaee7d767f";
+            document.getElementById("templeImage1").src = "https://www.pilotguides.com/wp-content/uploads/2022/02/7912784624_3b95751bc8_c-799x445.jpg";
+            document.getElementById("templeImage2").src = "https://www.worldhistory.org/uploads/images/3988.jpg";
         }
 
         function changeCountryImages() {
-            document.getElementById("countryImage1").src = "https://images.unsplash.com/photo-1531194899334-5fffc97b1d56";
-            document.getElementById("countryImage2").src = "https://images.unsplash.com/photo-1524069691435-d2320d57e8c4";
+            document.getElementById("countryImage1").src = "https://img.andrewprokos.com/MANHATTAN-EMPIRE-STATE-VIEW-FROM-ROCKEFELLER-CENTER-AT-DUSK-5214-1000PX.jpg";
+            document.getElementById("countryImage2").src = "https://cdn.prod.website-files.com/63a02e61e7ffb565c30bcfc7/6597baeda6320c678311dd7f_country%20landscape%20design.webp";
         }
     </script>
 </body>
