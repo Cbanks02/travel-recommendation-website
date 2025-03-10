@@ -56,16 +56,6 @@
             margin: 0.5em 0;
             padding: 0.5em;
         }
-        button {
-            padding: 10px;
-            background-color: #333;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #555;
-        }
     </style>
 </head>
 <body>
@@ -89,28 +79,25 @@
         <div id="recommendations">
             <h2>Top Recommendations</h2>
 
-            <div class="recommendation" id="beachRecommendation">
+            <div class="recommendation">
                 <h3>Beach Destinations</h3>
                 <p>Relax on pristine shores with our top beach recommendations.</p>
-                <img src="https://beachatlas.s3.us-east-2.amazonaws.com/61ccd2da-e8f3-4511-9dba-bd9a7f30d2ff.webp" alt="Sunny Beach" id="beachImage1">
-                <img src="https://www.worldbeachguide.com/photos/large/lanikai-beach-hawaii.jpg" alt="Lanikai Beach, Hawaii" id="beachImage2">
-                <button onclick="changeBeachImages()">Change Beach Images</button>
+                <img src="https://beachatlas.s3.us-east-2.amazonaws.com/61ccd2da-e8f3-4511-9dba-bd9a7f30d2ff.webp" alt="Sunny Beach">
+                <img src="https://www.worldbeachguide.com/photos/large/lanikai-beach-hawaii.jpg" alt="Lanikai Beach, Hawaii">
             </div>
 
-            <div class="recommendation" id="templeRecommendation">
+            <div class="recommendation">
                 <h3>Temple Visits</h3>
                 <p>Explore serene and historic temples that offer peace and cultural insights.</p>
-                <img src="https://www.worldhistory.org/uploads/images/3988.jpg" alt="Ancient Temple" id="templeImage1">
-                <img src="https://www.pilotguides.com/wp-content/uploads/2022/02/7912784624_3b95751bc8_c-799x445.jpg" alt="Modern Temple" id="templeImage2">
-                <button onclick="changeTempleImages()">Change Temple Images</button>
+                <img src="https://www.worldhistory.org/uploads/images/3988.jpg" alt="Ancient Temple">
+                <img src="https://www.pilotguides.com/wp-content/uploads/2022/02/7912784624_3b95751bc8_c-799x445.jpg" alt="Modern Temple">
             </div>
 
-            <div class="recommendation" id="countryRecommendation">
+            <div class="recommendation">
                 <h3>Destinations by Country</h3>
                 <p>Experience the unique charm of different countries.</p>
-                <img src="https://cdn.prod.website-files.com/63a02e61e7ffb565c30bcfc7/6597baeda6320c678311dd7f_country%20landscape%20design.webp" alt="Country Landscape" id="countryImage1">
-                <img src="https://img.andrewprokos.com/MANHATTAN-EMPIRE-STATE-VIEW-FROM-ROCKEFELLER-CENTER-AT-DUSK-5214-1000PX.jpg" alt="City Skyline" id="countryImage2">
-                <button onclick="changeCountryImages()">Change Country Images</button>
+                <img src="https://cdn.prod.website-files.com/63a02e61e7ffb565c30bcfc7/6597baeda6320c678311dd7f_country%20landscape%20design.webp" alt="Country Landscape">
+                <img src="https://img.andrewprokos.com/MANHATTAN-EMPIRE-STATE-VIEW-FROM-ROCKEFELLER-CENTER-AT-DUSK-5214-1000PX.jpg" alt="City Skyline">
             </div>
         </div>
 
@@ -121,34 +108,4 @@
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" placeholder="Your email" required>
 
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" placeholder="Your message" rows="5" required></textarea>
-
-                <button type="submit">Submit</button>
-            </form>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 Travel Guide. All Rights Reserved.</p>
-        <p><a href="https://github.com/Cbanks02/travel-recommendation-website.git" target="_blank" style="color: white; text-decoration: underline;">View our GitHub Repository</a></p>
-    </footer>
-
-    <script>
-        function changeBeachImages() {
-            document.getElementById("beachImage1").src = "https://www.worldbeachguide.com/photos/large/lanikai-beach-hawaii.jpg";
-            document.getElementById("beachImage2").src = "https://beachatlas.s3.us-east-2.amazonaws.com/61ccd2da-e8f3-4511-9dba-bd9a7f30d2ff.webp";
-        }
-
-        function changeTempleImages() {
-            document.getElementById("templeImage1").src = "https://www.pilotguides.com/wp-content/uploads/2022/02/7912784624_3b95751bc8_c-799x445.jpg";
-            document.getElementById("templeImage2").src = "https://www.worldhistory.org/uploads/images/3988.jpg";
-        }
-
-        function changeCountryImages() {
-            document.getElementById("countryImage1").src = "https://img.andrewprokos.com/MANHATTAN-EMPIRE-STATE-VIEW-FROM-ROCKEFELLER-CENTER-AT-DUSK-5214-1000PX.jpg";
-            document.getElementById("countryImage2").src = "https://cdn.prod.website-files.com/63a02e61e7ffb565c30bcfc7/6597baeda6320c678311dd7f_country%20landscape%20design.webp";
-        }
-    </script>
-</body>
-</html>
+ 
