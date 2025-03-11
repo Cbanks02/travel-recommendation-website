@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Travel With US</title>
+    <title>Travel With Us</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -56,6 +56,14 @@
             margin: 0.5em 0;
             padding: 0.5em;
         }
+        #search-section {
+            text-align: center;
+            margin-bottom: 2em;
+        }
+        #search-results {
+            display: none;
+            margin-top: 2em;
+        }
     </style>
 </head>
 <body>
@@ -76,29 +84,15 @@
             <p>We are passionate about helping you explore the world. Our platform provides tailored travel recommendations based on your preferences, ensuring you have the best experiences at your chosen destinations.</p>
         </div>
 
-        <div id="recommendations">
-            <h2>Top Recommendations</h2>
+        <div id="search-section">
+            <h2>Find Recommendations</h2>
+            <input type="text" id="search-input" placeholder="Search for 'country' or 'temple'">
+            <button onclick="searchRecommendations()">Search</button>
+        </div>
 
-            <div class="recommendation">
-                <h3>Beach Destinations</h3>
-                <p>Relax on pristine shores with our top beach recommendations.</p>
-                <img src="https://beachatlas.s3.us-east-2.amazonaws.com/61ccd2da-e8f3-4511-9dba-bd9a7f30d2ff.webp" alt="Sunny Beach">
-                <img src="https://www.worldbeachguide.com/photos/large/lanikai-beach-hawaii.jpg" alt="Lanikai Beach, Hawaii">
-            </div>
-
-            <div class="recommendation">
-                <h3>Temple Visits</h3>
-                <p>Explore serene and historic temples that offer peace and cultural insights.</p>
-                <img src="https://www.worldhistory.org/uploads/images/3988.jpg" alt="Ancient Temple">
-                <img src="https://www.pilotguides.com/wp-content/uploads/2022/02/7912784624_3b95751bc8_c-799x445.jpg" alt="Modern Temple">
-            </div>
-
-            <div class="recommendation">
-                <h3>Destinations by Country</h3>
-                <p>Experience the unique charm of different countries.</p>
-                <img src="https://cdn.prod.website-files.com/63a02e61e7ffb565c30bcfc7/6597baeda6320c678311dd7f_country%20landscape%20design.webp" alt="Country Landscape">
-                <img src="https://img.andrewprokos.com/MANHATTAN-EMPIRE-STATE-VIEW-FROM-ROCKEFELLER-CENTER-AT-DUSK-5214-1000PX.jpg" alt="City Skyline">
-            </div>
+        <div id="search-results">
+            <h2>Search Results</h2>
+            <div id="results-container"></div>
         </div>
 
         <div id="contact">
@@ -120,5 +114,52 @@
         <p>&copy; 2025 Travel Guide. All Rights Reserved.</p>
         <p><a href="https://github.com/Cbanks02/travel-recommendation-website.git" target="_blank" style="color: white; text-decoration: underline;">View our GitHub Repository</a></p>
     </footer>
+
+    <script>
+        function searchRecommendations() {
+            const input = document.getElementById("search-input").value.toLowerCase();
+            const resultsContainer = document.getElementById("results-container");
+            const searchResults = document.getElementById("search-results");
+
+            resultsContainer.innerHTML = ""; // Clear previous results
+            searchResults.style.display = "block"; // Show results section
+
+            if (input.includes("country")) {
+                resultsContainer.innerHTML += `
+                    <div class="recommendation">
+                        <h3>Japan</h3>
+                        <p>Discover the rich culture, advanced technology, and natural beauty of Japan.</p>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Tokyo_Skyline.jpg" alt="Tokyo Skyline">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Kyoto_Fushimi_Inari_Shrine.jpg" alt="Kyoto Shrine">
+                    </div>
+                    <div class="recommendation">
+                        <h3>France</h3>
+                        <p>Explore the romantic charm of Paris and the scenic countryside of France.</p>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Eiffel_Tower_Paris.jpg" alt="Eiffel Tower">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/1/12/Mont_Saint-Michel_2005.jpg" alt="Mont Saint-Michel">
+                    </div>
+                `;
+            }
+
+            if (input.includes("temple")) {
+                resultsContainer.innerHTML += `
+                    <div class="recommendation">
+                        <h3>Angkor Wat, Cambodia</h3>
+                        <p>Experience the grandeur of the world's largest temple complex.</p>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/Angkor_Wat_at_sunrise.jpg" alt="Angkor Wat">
+                    </div>
+                    <div class="recommendation">
+                        <h3>Shwedagon Pagoda, Myanmar</h3>
+                        <p>Visit the golden temple that is a symbol of Burmese heritage.</p>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Shwedagon_Pagoda_Night.jpg" alt="Shwedagon Pagoda">
+                    </div>
+                `;
+            }
+
+            if (!input.includes("country") && !input.includes("temple")) {
+                resultsContainer.innerHTML = "<p>No recommendations found. Try searching for 'country' or 'temple'.</p>";
+            }
+        }
+    </script>
 </body>
 </html>
