@@ -1,165 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Travel With Us</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        nav {
-            background-color: #333;
-            color: white;
-            display: flex;
-            justify-content: space-around;
-            padding: 1em;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 1em;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        header {
-            text-align: center;
-            padding: 2em;
-            background-color: #f4f4f4;
-        }
-        .content {
-            padding: 2em;
-        }
-        .recommendation {
-            margin-bottom: 2em;
-        }
-        .recommendation img {
-            width: 45%;
-            margin: 1%;
-        }
-        footer {
-            text-align: center;
-            padding: 1em;
-            background-color: #333;
-            color: white;
-        }
-        form {
-            display: flex;
-            flex-direction: column;
-            max-width: 300px;
-            margin: 0 auto;
-        }
-        form input, form textarea, form button {
-            margin: 0.5em 0;
-            padding: 0.5em;
-        }
-        #search-section {
-            text-align: center;
-            margin-bottom: 2em;
-        }
-        #search-results {
-            display: none;
-            margin-top: 2em;
-        }
-    </style>
-</head>
-<body>
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About Us</a>
-        <a href="#contact">Contact Us</a>
-    </nav>
+function searchRecommendations() {
+    const input = document.getElementById("search-input").value.toLowerCase();
+    const resultsContainer = document.getElementById("results-container");
+    const searchResults = document.getElementById("search-results");
 
-    <header id="home">
-        <h1>Welcome to Your Travel Guide</h1>
-        <p>Discover your next adventure with personalized travel recommendations!</p>
-    </header>
+    resultsContainer.innerHTML = ""; // Clear previous results
+    searchResults.style.display = "block"; // Show results section
 
-    <section class="content">
-        <div id="about">
-            <h2>About Us</h2>
-            <p>We are passionate about helping you explore the world. Our platform provides tailored travel recommendations based on your preferences, ensuring you have the best experiences at your chosen destinations.</p>
-        </div>
+    if (input.includes("country")) {
+        resultsContainer.innerHTML += `
+            <div class="recommendation">
+                <h3>Solvaria</h3>
+                <p>Experience the breathtaking landscapes and vibrant culture of Solvaria.</p>
+                <h4>Solvaria Mountains</h4>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Scenic_Mountain_View.jpg" alt="Solvaria Mountains">
+                <h4>Solvaria Historic City</h4>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Medieval_Cityscape.jpg" alt="Solvaria Historic City">
+            </div>
+            <div class="recommendation">
+                <h3>Zephyria</h3>
+                <p>Explore the crystal-clear beaches and lush jungles of Zephyria.</p>
+                <h4>Zephyria Beach</h4>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Tropical_Beach.jpg" alt="Zephyria Beach">
+                <h4>Zephyria Jungle</h4>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/25/Jungle_Waterfall.jpg" alt="Zephyria Jungle">
+            </div>
+        `;
+    }
 
-        <div id="search-section">
-            <h2>Find Recommendations</h2>
-            <input type="text" id="search-input" placeholder="Search for 'country' or 'temple'">
-            <button onclick="searchRecommendations()">Search</button>
-        </div>
+    if (input.includes("temple")) {
+        resultsContainer.innerHTML += `
+            <div class="recommendation">
+                <h3>Temple of Elarion</h3>
+                <p>Located in the heart of the Mystic Valley, this temple is known for its stunning golden architecture.</p>
+                <h4>Temple of Elarion</h4>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Golden_Temple.jpg" alt="Temple of Elarion">
+            </div>
+            <div class="recommendation">
+                <h3>Sanctuary of Veyloria</h3>
+                <p>A peaceful retreat surrounded by waterfalls and sacred stone carvings.</p>
+                <h4>Sanctuary of Veyloria</h4>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Ancient_Temple_Waterfall.jpg" alt="Sanctuary of Veyloria">
+            </div>
+        `;
+    }
 
-        <div id="search-results">
-            <h2>Search Results</h2>
-            <div id="results-container"></div>
-        </div>
-
-        <div id="contact">
-            <h2>Contact Us</h2>
-            <p>Have questions or need help planning your trip? Reach out to us!</p>
-            <form>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="Your email" required>
-
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" placeholder="Your message" rows="5" required></textarea>
-
-                <button type="submit">Submit</button>
-            </form>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 Travel Guide. All Rights Reserved.</p>
-        <p><a href="https://github.com/Cbanks02/travel-recommendation-website.git" target="_blank" style="color: white; text-decoration: underline;">View our GitHub Repository</a></p>
-    </footer>
-
-    <script>
-        function searchRecommendations() {
-            const input = document.getElementById("search-input").value.toLowerCase();
-            const resultsContainer = document.getElementById("results-container");
-            const searchResults = document.getElementById("search-results");
-
-            resultsContainer.innerHTML = ""; // Clear previous results
-            searchResults.style.display = "block"; // Show results section
-
-            if (input.includes("country")) {
-                resultsContainer.innerHTML += `
-                    <div class="recommendation">
-                        <h3>Solvaria</h3>
-                        <p>Experience the breathtaking landscapes and vibrant culture of Solvaria.</p>
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Scenic_Mountain_View.jpg" alt="Solvaria Mountains">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Medieval_Cityscape.jpg" alt="Solvaria Historic City">
-                    </div>
-                    <div class="recommendation">
-                        <h3>Zephyria</h3>
-                        <p>Explore the crystal-clear beaches and lush jungles of Zephyria.</p>
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Tropical_Beach.jpg" alt="Zephyria Beach">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/25/Jungle_Waterfall.jpg" alt="Zephyria Jungle">
-                    </div>
-                `;
-            }
-
-            if (input.includes("temple")) {
-                resultsContainer.innerHTML += `
-                    <div class="recommendation">
-                        <h3>Temple of Elarion</h3>
-                        <p>Located in the heart of the Mystic Valley, this temple is known for its stunning golden architecture.</p>
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Golden_Temple.jpg" alt="Temple of Elarion">
-                    </div>
-                    <div class="recommendation">
-                        <h3>Sanctuary of Veyloria</h3>
-                        <p>A peaceful retreat surrounded by waterfalls and sacred stone carvings.</p>
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Ancient_Temple_Waterfall.jpg" alt="Sanctuary of Veyloria">
-                    </div>
-                `;
-            }
-
-            if (!input.includes("country") && !input.includes("temple")) {
-                resultsContainer.innerHTML = "<p>No recommendations found. Try searching for 'country' or 'temple'.</p>";
-            }
-        }
-    </script>
-</body>
-</html>
+    if (!input.includes("country") && !input.includes("temple")) {
+        resultsContainer.innerHTML = "<p>No recommendations found. Try searching for 'country' or 'temple'.</p>";
+    }
+}
