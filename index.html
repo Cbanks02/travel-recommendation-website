@@ -1,64 +1,169 @@
-<script>
-    function searchRecommendations() {
-        const input = document.getElementById("search-input").value.toLowerCase();
-        const resultsContainer = document.getElementById("results-container");
-        const searchResults = document.getElementById("search-results");
-
-        resultsContainer.innerHTML = ""; // Clear previous results
-        searchResults.style.display = "block"; // Show results section
-
-        if (input.includes("country")) {
-            resultsContainer.innerHTML += `
-                <div class="recommendation">
-                    <h3>Solvaria</h3>
-                    <p>Experience the breathtaking landscapes and vibrant culture of Solvaria.</p>
-                    <div>
-                        <h4>Solvaria Mountains</h4>
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Scenic_Mountain_View.jpg" alt="Solvaria Mountains">
-                    </div>
-                    <div>
-                        <h4>Solvaria Historic City</h4>
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Medieval_Cityscape.jpg" alt="Solvaria Historic City">
-                    </div>
-                </div>
-                <div class="recommendation">
-                    <h3>Zephyria</h3>
-                    <p>Explore the crystal-clear beaches and lush jungles of Zephyria.</p>
-                    <div>
-                        <h4>Zephyria Beach</h4>
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Tropical_Beach.jpg" alt="Zephyria Beach">
-                    </div>
-                    <div>
-                        <h4>Zephyria Jungle</h4>
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/25/Jungle_Waterfall.jpg" alt="Zephyria Jungle">
-                    </div>
-                </div>
-            `;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel With Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
         }
-
-        if (input.includes("temple")) {
-            resultsContainer.innerHTML += `
-                <div class="recommendation">
-                    <h3>Temple of Elarion</h3>
-                    <p>Located in the heart of the Mystic Valley, this temple is known for its stunning golden architecture.</p>
-                    <div>
-                        <h4>Temple of Elarion</h4>
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Golden_Temple.jpg" alt="Temple of Elarion">
-                    </div>
-                </div>
-                <div class="recommendation">
-                    <h3>Sanctuary of Veyloria</h3>
-                    <p>A peaceful retreat surrounded by waterfalls and sacred stone carvings.</p>
-                    <div>
-                        <h4>Sanctuary of Veyloria</h4>
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Ancient_Temple_Waterfall.jpg" alt="Sanctuary of Veyloria">
-                    </div>
-                </div>
-            `;
+        nav {
+            background-color: #333;
+            color: white;
+            display: flex;
+            justify-content: space-around;
+            padding: 1em;
         }
-
-        if (!input.includes("country") && !input.includes("temple")) {
-            resultsContainer.innerHTML = "<p>No recommendations found. Try searching for 'country' or 'temple'.</p>";
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1em;
         }
-    }
-</script>
+        nav a:hover {
+            text-decoration: underline;
+        }
+        header {
+            text-align: center;
+            padding: 2em;
+            background-color: #f4f4f4;
+        }
+        .content {
+            padding: 2em;
+        }
+        .recommendation {
+            margin-bottom: 2em;
+        }
+        .image-container {
+            position: relative;
+            display: inline-block;
+            margin: 10px;
+        }
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+        }
+        .image-container .image-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-align: center;
+            width: 90%;
+            border-radius: 5px;
+        }
+        footer {
+            text-align: center;
+            padding: 1em;
+            background-color: #333;
+            color: white;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+        form input, form textarea, form button {
+            margin: 0.5em 0;
+            padding: 0.5em;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact Us</a>
+    </nav>
+
+    <header id="home">
+        <h1>Welcome to Your Travel Guide</h1>
+        <p>Discover your next adventure with personalized travel recommendations!</p>
+    </header>
+
+    <section class="content">
+        <div id="about">
+            <h2>About Us</h2>
+            <p>We are passionate about helping you explore the world. Our platform provides tailored travel recommendations based on your preferences, ensuring you have the best experiences at your chosen destinations.</p>
+        </div>
+
+        <div id="recommendations">
+            <h2>Top Recommendations</h2>
+
+            <div class="recommendation">
+                <h3>Beach Destinations</h3>
+                <p>Relax on pristine shores with our top beach recommendations.</p>
+                
+                <div class="image-container">
+                    <img src="https://beachatlas.s3.us-east-2.amazonaws.com/61ccd2da-e8f3-4511-9dba-bd9a7f30d2ff.webp" alt="Sunny Beach">
+                    <div class="image-text">Sunny Beach</div>
+                </div>
+                
+                <div class="image-container">
+                    <img src="https://www.worldbeachguide.com/photos/large/lanikai-beach-hawaii.jpg" alt="Lanikai Beach, Hawaii">
+                    <div class="image-text">Lanikai Beach, Hawaii</div>
+                </div>
+            </div>
+
+            <div class="recommendation">
+                <h3>Temple Visits</h3>
+                <p>Explore serene and historic temples that offer peace and cultural insights.</p>
+                
+                <div class="image-container">
+                    <img src="https://www.worldhistory.org/uploads/images/3988.jpg" alt="Ancient Temple">
+                    <div class="image-text">Ancient Temple</div>
+                </div>
+                
+                <div class="image-container">
+                    <img src="https://www.pilotguides.com/wp-content/uploads/2022/02/7912784624_3b95751bc8_c-799x445.jpg" alt="Modern Temple">
+                    <div class="image-text">Modern Temple</div>
+                </div>
+            </div>
+
+            <div class="recommendation">
+                <h3>Destinations by Country</h3>
+                <p>Experience the unique charm of different countries.</p>
+                
+                <div class="image-container">
+                    <img src="https://cdn.prod.website-files.com/63a02e61e7ffb565c30bcfc7/6597baeda6320c678311dd7f_country%20landscape%20design.webp" alt="Country Landscape">
+                    <div class="image-text">Scenic Countryside</div>
+                </div>
+                
+                <div class="image-container">
+                    <img src="https://img.andrewprokos.com/MANHATTAN-EMPIRE-STATE-VIEW-FROM-ROCKEFELLER-CENTER-AT-DUSK-5214-1000PX.jpg" alt="City Skyline">
+                    <div class="image-text">Urban Skyline</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="contact">
+            <h2>Contact Us</h2>
+            <p>Have questions or need help planning your trip? Reach out to us!</p>
+            <form>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Your email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" placeholder="Your message" rows="5" required></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Travel Guide. All Rights Reserved.</p>
+        <p><a href="https://github.com/Cbanks02/travel-recommendation-website.git" target="_blank" style="color: white; text-decoration: underline;">View our GitHub Repository</a></p>
+    </footer>
+</body>
+</html>
