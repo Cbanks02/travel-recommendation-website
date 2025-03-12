@@ -79,7 +79,7 @@
             const searchTerm = document.getElementById("search").value.toLowerCase();
             let recommendations = document.getElementById("recommendations");
             recommendations.innerHTML = "";
-            
+
             if (searchTerm.includes("country")) {
                 recommendations.innerHTML = `
                     <h2>Top Country Recommendations</h2>
@@ -108,6 +108,37 @@
                 `;
             }
         }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const destinations = document.getElementById('recommendations');
+            destinations.innerHTML += `
+                <h2>Explore Amazing Destinations</h2>
+
+                <div class="recommendation">
+                    <h3>Cambodia</h3>
+                    <img src="images/cambodia.jpg" alt="Angkor Wat in Cambodia">
+                    <p>Discover the ancient temples of Angkor Wat and the vibrant culture of Cambodia.</p>
+                </div>
+
+                <div class="recommendation">
+                    <h3>Vietnam</h3>
+                    <img src="images/vietnam.jpg" alt="Ha Long Bay in Vietnam">
+                    <p>Experience the breathtaking landscapes of Ha Long Bay and the bustling streets of Hanoi.</p>
+                </div>
+
+                <div class="recommendation">
+                    <h3>Castle Beach</h3>
+                    <img src="images/castle_beach.jpg" alt="Castle Beach">
+                    <p>Relax on the serene shores of Castle Beach – a hidden gem for beach lovers.</p>
+                </div>
+
+                <div class="recommendation">
+                    <h3>Thailand</h3>
+                    <img src="images/thailand.jpg" alt="Beach in Thailand">
+                    <p>Explore the stunning beaches, bustling markets, and rich culture of Thailand.</p>
+                </div>
+            `;
+        });
     </script>
 </head>
 <body>
@@ -127,9 +158,9 @@
     <section class="content">
         <div id="about">
             <h2>About Us</h2>
-            <p>We are passionate about helping you explore the world. Our platform provides tailored travel recommendations based on your preferences.</p>
+            <p>We are an organization that recommends amazing travel options. Our staff members are Ashley Johnson, Cameron Banks, and Isaiah Reed.</p>
         </div>
-        
+
         <div id="recommendations">
             <h2>Top Recommendations</h2>
         </div>
