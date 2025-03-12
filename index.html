@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Travel With US</title>
+    <title>Travel With Us</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -35,26 +35,32 @@
         }
         .recommendation {
             margin-bottom: 2em;
-            position: relative;
             text-align: center;
         }
-        .recommendation img {
-            width: 45%;
-            margin: 1%;
-            display: block;
-        }
-        .recommendation .image-container {
+        .image-container {
             position: relative;
             display: inline-block;
+            margin: 10px;
+            width: 45%;
         }
-        .recommendation .image-container span {
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+        }
+        .image-container .image-text {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.6);
             color: white;
-            padding: 5px;
+            padding: 10px;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-align: center;
+            width: 80%;
             border-radius: 5px;
         }
         footer {
@@ -74,72 +80,6 @@
             padding: 0.5em;
         }
     </style>
-    <script>
-        function searchRecommendations() {
-            const searchTerm = document.getElementById("search").value.toLowerCase();
-            let recommendations = document.getElementById("recommendations");
-            recommendations.innerHTML = "";
-
-            if (searchTerm.includes("country")) {
-                recommendations.innerHTML = `
-                    <h2>Top Country Recommendations</h2>
-                    <div class="recommendation">
-                        <h3>Congo</h3>
-                        <p>Discover the rich culture and natural beauty of Congo.</p>
-                    </div>
-                    <div class="recommendation">
-                        <h3>El Salvador</h3>
-                        <p>Explore the vibrant cities and stunning landscapes of El Salvador.</p>
-                    </div>
-                `;
-            } else if (searchTerm.includes("temple")) {
-                recommendations.innerHTML = `
-                    <h2>Top Temple Recommendations</h2>
-                    <div class="recommendation">
-                        <div class="image-container">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Durga_temple_Aihole.jpg" alt="Durga Mandir">
-                            <span>Durga Mandir</span>
-                        </div>
-                        <div class="image-container">
-                            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/41/a0/77/san-salvador.jpg" alt="San Salvador Temple">
-                            <span>San Salvador Temple</span>
-                        </div>
-                    </div>
-                `;
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', function() {
-            const destinations = document.getElementById('recommendations');
-            destinations.innerHTML += `
-                <h2>Explore Amazing Destinations</h2>
-
-                <div class="recommendation">
-                    <h3>Cambodia</h3>
-                    <img src="images/cambodia.jpg" alt="Angkor Wat in Cambodia">
-                    <p>Discover the ancient temples of Angkor Wat and the vibrant culture of Cambodia.</p>
-                </div>
-
-                <div class="recommendation">
-                    <h3>Vietnam</h3>
-                    <img src="images/vietnam.jpg" alt="Ha Long Bay in Vietnam">
-                    <p>Experience the breathtaking landscapes of Ha Long Bay and the bustling streets of Hanoi.</p>
-                </div>
-
-                <div class="recommendation">
-                    <h3>Castle Beach</h3>
-                    <img src="images/castle_beach.jpg" alt="Castle Beach">
-                    <p>Relax on the serene shores of Castle Beach – a hidden gem for beach lovers.</p>
-                </div>
-
-                <div class="recommendation">
-                    <h3>Thailand</h3>
-                    <img src="images/thailand.jpg" alt="Beach in Thailand">
-                    <p>Explore the stunning beaches, bustling markets, and rich culture of Thailand.</p>
-                </div>
-            `;
-        });
-    </script>
 </head>
 <body>
     <nav>
@@ -151,18 +91,75 @@
     <header id="home">
         <h1>Welcome to Your Travel Guide</h1>
         <p>Discover your next adventure with personalized travel recommendations!</p>
-        <input type="text" id="search" placeholder="Search...">
-        <button onclick="searchRecommendations()">Search</button>
     </header>
 
     <section class="content">
         <div id="about">
             <h2>About Us</h2>
-            <p>We are an organization that recommends amazing travel options. Our staff members are Ashley Johnson, Cameron Banks, and Isaiah Reed.</p>
+            <p>We are passionate about helping you explore the world. Our platform provides tailored travel recommendations based on your preferences, ensuring you have the best experiences at your chosen destinations.</p>
         </div>
 
         <div id="recommendations">
             <h2>Top Recommendations</h2>
+
+            <div class="recommendation">
+                <h3>Beach Destinations</h3>
+                <p>Relax on pristine shores with our top beach recommendations.</p>
+                
+                <div class="image-container">
+                    <img src="https://beachatlas.s3.us-east-2.amazonaws.com/61ccd2da-e8f3-4511-9dba-bd9a7f30d2ff.webp" alt="Sunny Beach">
+                    <div class="image-text">Sunny Beach</div>
+                </div>
+                
+                <div class="image-container">
+                    <img src="https://www.worldbeachguide.com/photos/large/lanikai-beach-hawaii.jpg" alt="Lanikai Beach, Hawaii">
+                    <div class="image-text">Lanikai Beach, Hawaii</div>
+                </div>
+            </div>
+
+            <div class="recommendation">
+                <h3>Temple Visits</h3>
+                <p>Explore serene and historic temples that offer peace and cultural insights.</p>
+                
+                <div class="image-container">
+                    <img src="https://www.worldhistory.org/uploads/images/3988.jpg" alt="Ancient Temple">
+                    <div class="image-text">Ancient Temple</div>
+                </div>
+                
+                <div class="image-container">
+                    <img src="https://www.pilotguides.com/wp-content/uploads/2022/02/7912784624_3b95751bc8_c-799x445.jpg" alt="Modern Temple">
+                    <div class="image-text">Modern Temple</div>
+                </div>
+            </div>
+
+            <div class="recommendation">
+                <h3>Destinations by Country</h3>
+                <p>Experience the unique charm of different countries.</p>
+                
+                <div class="image-container">
+                    <img src="https://cdn.prod.website-files.com/63a02e61e7ffb565c30bcfc7/6597baeda6320c678311dd7f_country%20landscape%20design.webp" alt="Country Landscape">
+                    <div class="image-text">Scenic Countryside</div>
+                </div>
+                
+                <div class="image-container">
+                    <img src="https://img.andrewprokos.com/MANHATTAN-EMPIRE-STATE-VIEW-FROM-ROCKEFELLER-CENTER-AT-DUSK-5214-1000PX.jpg" alt="City Skyline">
+                    <div class="image-text">Urban Skyline</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="contact">
+            <h2>Contact Us</h2>
+            <p>Have questions or need help planning your trip? Reach out to us!</p>
+            <form>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Your email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" placeholder="Your message" rows="5" required></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
         </div>
     </section>
 
